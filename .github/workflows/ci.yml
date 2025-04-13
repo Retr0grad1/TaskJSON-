@@ -1,0 +1,24 @@
+name: Build C++ Project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Build project
+        run: cl /EHsc /Iinclude TaskJSON.cpp
+
+      - name: Run executable
+        run: TaskJSON.exe < test_input.json
