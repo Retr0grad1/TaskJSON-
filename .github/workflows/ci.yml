@@ -21,4 +21,5 @@ jobs:
         run: cl /EHsc /Iinclude TaskJSON.cpp
 
       - name: Run executable
-        run: TaskJSON.exe < test_input.json
+        shell: cmd
+        run: .\TaskJSON.exe < test_input.json
