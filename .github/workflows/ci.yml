@@ -22,4 +22,4 @@ jobs:
 
       - name: Run executable
         shell: cmd
-        run: .\TaskJSON.exe < test_input.json
+        run: .\TaskJSON.exe < input.json
